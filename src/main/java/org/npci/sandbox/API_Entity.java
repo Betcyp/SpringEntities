@@ -15,6 +15,7 @@ public class API_Entity {
 	@Column(name="ID")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
+	
 	@Column(name = "NAME")
 	private String apiName;
 	
@@ -34,6 +35,10 @@ public class API_Entity {
 		this.apiName = apiName;
 		this.apiType = apiType;
 		this.reqMsgConfg = reqMsgConfg;
+	}
+
+	public API_Entity() {
+		super();
 	}
 
 	public String getApiName() {

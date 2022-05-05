@@ -10,6 +10,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "REQUEST")
 public class Request_Entity {
+	
 	@Id 
 	@Column(name="ID")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -27,6 +28,10 @@ public class Request_Entity {
 		super();
 		this.id = id;
 		this.requestType = requestType;
+	}
+
+	public Request_Entity() {
+		super();
 	}
 
 	public int getId() {

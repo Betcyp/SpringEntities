@@ -48,6 +48,10 @@ public class JSON_Request_Entity {
 		this.maxLength = maxLength;
 	}
 
+	public JSON_Request_Entity() {
+		super();
+	}
+
 	public int getId() {
 		return id;
 	}

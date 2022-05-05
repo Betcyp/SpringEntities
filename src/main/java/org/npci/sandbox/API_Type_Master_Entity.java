@@ -10,6 +10,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "API_TYPE_MASTER")
 public class API_Type_Master_Entity {
+	
 	@Id
 	@Column(name = "ID")
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,6 +28,10 @@ public class API_Type_Master_Entity {
 		super();
 		this.id = id;
 		this.apiType = apiType;
+	}
+	
+	public API_Type_Master_Entity() {
+		super();
 	}
 
 	public int getId() {

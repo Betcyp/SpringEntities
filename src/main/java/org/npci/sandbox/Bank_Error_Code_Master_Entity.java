@@ -10,6 +10,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "BANK_ERROR_CODE_MASTER")
 public class Bank_Error_Code_Master_Entity {
+	
 	@Id 
 	@Column(name="ID")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -32,6 +33,10 @@ public class Bank_Error_Code_Master_Entity {
 		this.id = id;
 		this.errorCode = errorCode;
 		this.errorDesc = errorDesc;
+	}
+
+	public Bank_Error_Code_Master_Entity() {
+		super();
 	}
 
 	public int getId() {

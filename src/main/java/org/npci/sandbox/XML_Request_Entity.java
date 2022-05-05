@@ -10,6 +10,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "XML_REQUEST")
 public class XML_Request_Entity {
+	
 	@Id 
 	@Column(name="ID")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -45,6 +46,10 @@ public class XML_Request_Entity {
 		this.valueType = valueType;
 		this.mandateOpt = mandateOpt;
 		this.maxLength = maxLength;
+	}
+
+	public XML_Request_Entity() {
+		super();
 	}
 
 	public int getId() {
@@ -94,7 +99,4 @@ public class XML_Request_Entity {
 	public void setMaxLength(int maxLength) {
 		this.maxLength = maxLength;
 	}
-	
-	
-	
 }

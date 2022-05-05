@@ -1,5 +1,4 @@
 package org.npci.sandbox;
-// server.port = 8086
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -44,9 +43,12 @@ public class Product_Entity {
 		this.isActive = isActive;
 		this.productId = productId;
 	}
+	
+	public Product_Entity() {
+		super();
+	}
 
-
-	public long getProductId() {
+	public int getProductId() {
 		return productId;
 	}
 

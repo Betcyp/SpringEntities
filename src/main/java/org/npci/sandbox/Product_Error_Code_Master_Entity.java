@@ -27,14 +27,17 @@ public class Product_Error_Code_Master_Entity {
 		return "Product_Error_Code_Master_Entity [id=" + id + ", errorCode=" + errorCode + ", errorDesc=" + errorDesc
 				+ "]";
 	}
-
 	
-
 	public Product_Error_Code_Master_Entity(int id, int errorCode, String errorDesc) {
 		super();
 		this.id = id;
 		this.errorCode = errorCode;
 		this.errorDesc = errorDesc;
+	}
+
+	
+	public Product_Error_Code_Master_Entity() {
+		super();
 	}
 
 	public int getId() {

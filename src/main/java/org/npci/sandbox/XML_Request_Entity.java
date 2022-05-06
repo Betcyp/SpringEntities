@@ -13,22 +13,22 @@ public class XML_Request_Entity {
 	
 	@Id 
 	@Column(name="ID")
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
-	@Column(name="FIELD_NAME")
-	private int fieldName;
+	@Column(name="FIELD_NAME", nullable=false)
+	private String fieldName;
 	
-	@Column(name="FIELD_TYPE")
+	@Column(name="FIELD_TYPE", nullable=false)
 	private String fieldType;
 
-	@Column(name="VALUE_TYPE")
+	@Column(name="VALUE_TYPE", nullable=false)
 	private String valueType;
 	
-	@Column(name="MANDATORY_OPTIONAL")
+	@Column(name="MANDATORY_OPTIONAL", nullable=false)
 	private String mandateOpt;
 	
-	@Column(name="MAX_LENGTH")
+	@Column(name="MAX_LENGTH", nullable=false)
 	private int maxLength;
 
 	@Override
@@ -37,7 +37,7 @@ public class XML_Request_Entity {
 				+ valueType + ", mandateOpt=" + mandateOpt + ", maxLength=" + maxLength + "]";
 	}
 
-	public XML_Request_Entity(int id, int fieldName, String fieldType, String valueType, String mandateOpt,
+	public XML_Request_Entity(int id, String fieldName, String fieldType, String valueType, String mandateOpt,
 			int maxLength) {
 		super();
 		this.id = id;
@@ -60,11 +60,11 @@ public class XML_Request_Entity {
 		this.id = id;
 	}
 
-	public int getFieldName() {
+	public String getFieldName() {
 		return fieldName;
 	}
 
-	public void setFieldName(int fieldName) {
+	public void setFieldName(String fieldName) {
 		this.fieldName = fieldName;
 	}
 

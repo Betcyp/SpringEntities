@@ -13,13 +13,13 @@ public class Product_Error_Code_Master_Entity {
 
 	@Id 
 	@Column(name="ID")
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
-	@Column(name="ERROR_CODE")
+	@Column(name="ERROR_CODE", nullable=false)
 	private int errorCode;
 	
-	@Column(name="ERROR_DESC")
+	@Column(name="ERROR_DESC", nullable=false)
 	private String errorDesc;
 
 	@Override

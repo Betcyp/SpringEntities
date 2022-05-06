@@ -14,17 +14,17 @@ public class Product_Entity {
 	@Column(name = "ID")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int productId;
-	
-	@Column(name = "PRODUCT_ICON")
+
+	@Column(name = "PRODUCT_ICON", nullable=false)
 	private String productIcon;
 	
-	@Column(name = "PRODUCT_NAME")
+	@Column(name = "PRODUCT_NAME", nullable=false)
 	private String productName;
 	
-	@Column(name = "PRODUCT_VERSION")
+	@Column(name = "PRODUCT_VERSION", nullable=false)
 	private String productVersion;
 	
-	@Column(name = "IS_ACTIVE")
+	@Column(name = "IS_ACTIVE", nullable=false)
 	private  String isActive;
 
 	

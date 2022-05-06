@@ -13,16 +13,16 @@ public class API_Entity {
 	
 	@Id 
 	@Column(name="ID")
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
-	@Column(name = "NAME")
+	@Column(name = "NAME", nullable=false)
 	private String apiName;
 	
-	@Column(name = "TYPE")
+	@Column(name = "TYPE", nullable=false)
 	private String apiType;
 	
-	@Column(name = "REQUEST_MESSAGE_CONFIGURATION")
+	@Column(name = "REQUEST_MESSAGE_CONFIGURATION", nullable=false)
 	private String reqMsgConfg;
 
 	@Override

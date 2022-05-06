@@ -13,10 +13,10 @@ public class Request_Entity {
 	
 	@Id 
 	@Column(name="ID")
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
-	@Column(name="REQUEST_TYPE")
+	@Column(name="REQUEST_TYPE", nullable=false)
 	private String requestType;
 
 	@Override

@@ -16,7 +16,7 @@ public class API_Type_Master_Entity {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
-	@Column(name = "TYPE")
+	@Column(name = "TYPE", nullable=false)
 	private String apiType;
 
 	@Override

@@ -1,10 +1,13 @@
 package org.npci.sandbox;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -30,15 +33,20 @@ public class XML_Request_Entity {
 	
 	@Column(name="MAX_LENGTH", nullable=false)
 	private int maxLength;
+	
+	@OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL,mappedBy = "xml")
+	private Request_Entity rqst;
+
+	
 
 	@Override
 	public String toString() {
 		return "XML_Request_Entity [id=" + id + ", fieldName=" + fieldName + ", fieldType=" + fieldType + ", valueType="
-				+ valueType + ", mandateOpt=" + mandateOpt + ", maxLength=" + maxLength + "]";
+				+ valueType + ", mandateOpt=" + mandateOpt + ", maxLength=" + maxLength + ", rqst=" + rqst + "]";
 	}
 
 	public XML_Request_Entity(int id, String fieldName, String fieldType, String valueType, String mandateOpt,
-			int maxLength) {
+			int maxLength, Request_Entity rqst) {
 		super();
 		this.id = id;
 		this.fieldName = fieldName;
@@ -46,6 +54,7 @@ public class XML_Request_Entity {
 		this.valueType = valueType;
 		this.mandateOpt = mandateOpt;
 		this.maxLength = maxLength;
+		this.rqst= rqst;
 	}
 
 	public XML_Request_Entity() {
@@ -99,4 +108,13 @@ public class XML_Request_Entity {
 	public void setMaxLength(int maxLength) {
 		this.maxLength = maxLength;
 	}
+
+	public Request_Entity getRqst() {
+		return rqst;
+	}
+
+	public void setRqst(Request_Entity rqst) {
+		this.rqst = rqst;
+	}
+	
 }

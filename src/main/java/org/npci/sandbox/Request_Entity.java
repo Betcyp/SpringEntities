@@ -1,10 +1,14 @@
 package org.npci.sandbox;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,18 +20,25 @@ public class Request_Entity {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
-	@Column(name="REQUEST_TYPE", nullable=false)
-	private String requestType;
+	@OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+	@JoinColumn(name = "XML_ID")
+	private XML_Request_Entity xml;
+	
+	@OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+	@JoinColumn(name = "JSON_ID")
+	private JSON_Request_Entity json;
+	
 
 	@Override
 	public String toString() {
-		return "Request_Entity [id=" + id + ", requestType=" + requestType + "]";
+		return "Request_Entity [id=" + id + ", xml=" + xml + ", json=" + json + "]";
 	}
 
-	public Request_Entity(int id, String requestType) {
+	public Request_Entity(int id, XML_Request_Entity xml, JSON_Request_Entity json) {
 		super();
 		this.id = id;
-		this.requestType = requestType;
+		this.xml = xml;
+		this.json = json;
 	}
 
 	public Request_Entity() {
@@ -42,11 +53,23 @@ public class Request_Entity {
 		this.id = id;
 	}
 
-	public String getRequestType() {
-		return requestType;
+
+	public XML_Request_Entity getXml() {
+		return xml;
 	}
 
-	public void setRequestType(String requestType) {
-		this.requestType = requestType;
+
+	public void setXml(XML_Request_Entity xml) {
+		this.xml = xml;
 	}
+
+	public JSON_Request_Entity getJson() {
+		return json;
+	}
+
+	public void setJson(JSON_Request_Entity json) {
+		this.json = json;
+	}
+	
+	
 }

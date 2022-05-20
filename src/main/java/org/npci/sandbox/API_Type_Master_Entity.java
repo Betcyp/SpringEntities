@@ -18,20 +18,20 @@ public class API_Type_Master_Entity {
 	
 	@Column(name = "TYPE", nullable=false)
 	private String apiType;
-
+	
 	@Override
 	public String toString() {
 		return "API_Type_Master_Entity [id=" + id + ", apiType=" + apiType + "]";
+	}
+	
+	public API_Type_Master_Entity() {
+		super();
 	}
 
 	public API_Type_Master_Entity(int id, String apiType) {
 		super();
 		this.id = id;
 		this.apiType = apiType;
-	}
-	
-	public API_Type_Master_Entity() {
-		super();
 	}
 
 	public int getId() {
@@ -48,6 +48,5 @@ public class API_Type_Master_Entity {
 
 	public void setApiType(String apiType) {
 		this.apiType = apiType;
-	}
-	
+	}	
 }

@@ -13,55 +13,39 @@ public class Product_Entity {
 	@Id
 	@Column(name = "ID")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int productId;
+	private int id;
 
-	@Column(name = "PRODUCT_ICON", nullable=false)
-	private String productIcon;
-	
 	@Column(name = "PRODUCT_NAME", nullable=false)
 	private String productName;
 	
 	@Column(name = "PRODUCT_VERSION", nullable=false)
 	private String productVersion;
 	
-	@Column(name = "IS_ACTIVE", nullable=false)
-	private  String isActive;
-
-	
 	@Override
 	public String toString() {
-		return "Product [productId=" + productId + ", productIcon=" + productIcon + ", productName=" + productName
-				+ ", productVersion=" + productVersion + ", isActive=" + isActive + "]";
+		return "Product_Entity [id=" + id + ", productName=" + productName + ", productVersion="
+				+ productVersion + "]";
 	}
 	
-	
-	public Product_Entity(String productName, String productVersion, String productIcon, String isActive, int productId) {
+	public Product_Entity(int id,String productName, String productVersion) {
 		super();
+		this.id = id;
 		this.productName = productName;
 		this.productVersion = productVersion;
-		this.productIcon = productIcon;
-		this.isActive = isActive;
-		this.productId = productId;
+		
 	}
-	
+
 	public Product_Entity() {
 		super();
 	}
 
-	public int getProductId() {
-		return productId;
+
+	public int getId() {
+		return id;
 	}
 
-	public void setProductId(int productId) {
-		this.productId = productId;
-	}
-
-	public String getProductIcon() {
-		return productIcon;
-	}
-
-	public void setProductIcon(String productIcon) {
-		this.productIcon = productIcon;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getProductName() {
@@ -78,14 +62,6 @@ public class Product_Entity {
 
 	public void setProductVersion(String productVersion) {
 		this.productVersion = productVersion;
-	}
-
-	public String getIsActive() {
-		return isActive;
-	}
-
-	public void setIsActive(String isActive) {
-		this.isActive = isActive;
 	}
 	
 }

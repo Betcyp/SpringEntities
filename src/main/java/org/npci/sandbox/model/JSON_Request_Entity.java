@@ -1,4 +1,4 @@
-package org.npci.sandbox;
+package org.npci.sandbox.model;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -11,8 +11,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "XML_REQUEST")
-public class XML_Request_Entity {
+@Table(name = "JSON_REQUEST")
+public class JSON_Request_Entity {
 	
 	@Id 
 	@Column(name="ID")
@@ -23,7 +23,7 @@ public class XML_Request_Entity {
 	private String fieldName;
 	
 	@Column(name="FIELD_TYPE", nullable=false)
-	private String fieldType;
+	private char fieldType;
 
 	@Column(name="VALUE_TYPE", nullable=false)
 	private String valueType;
@@ -37,15 +37,15 @@ public class XML_Request_Entity {
 	@OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL,mappedBy = "xml")
 	private Request_Entity rqst;
 
-	
 
 	@Override
 	public String toString() {
-		return "XML_Request_Entity [id=" + id + ", fieldName=" + fieldName + ", fieldType=" + fieldType + ", valueType="
-				+ valueType + ", mandateOpt=" + mandateOpt + ", maxLength=" + maxLength + ", rqst=" + rqst + "]";
+		return "JSON_Request_Entity [id=" + id + ", fieldName=" + fieldName + ", fieldType=" + fieldType
+				+ ", valueType=" + valueType + ", mandateOpt=" + mandateOpt + ", maxLength=" + maxLength + ", rqst="
+				+ rqst + "]";
 	}
 
-	public XML_Request_Entity(int id, String fieldName, String fieldType, String valueType, String mandateOpt,
+	public JSON_Request_Entity(int id, String fieldName, char fieldType, String valueType, String mandateOpt,
 			int maxLength, Request_Entity rqst) {
 		super();
 		this.id = id;
@@ -54,10 +54,10 @@ public class XML_Request_Entity {
 		this.valueType = valueType;
 		this.mandateOpt = mandateOpt;
 		this.maxLength = maxLength;
-		this.rqst= rqst;
+		this.rqst = rqst;
 	}
 
-	public XML_Request_Entity() {
+	public JSON_Request_Entity() {
 		super();
 	}
 
@@ -77,11 +77,11 @@ public class XML_Request_Entity {
 		this.fieldName = fieldName;
 	}
 
-	public String getFieldType() {
+	public char getFieldType() {
 		return fieldType;
 	}
 
-	public void setFieldType(String fieldType) {
+	public void setFieldType(char fieldType) {
 		this.fieldType = fieldType;
 	}
 

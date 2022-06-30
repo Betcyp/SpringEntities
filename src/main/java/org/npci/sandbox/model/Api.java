@@ -1,4 +1,4 @@
-package org.npci.sandbox;
+package org.npci.sandbox.model;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
